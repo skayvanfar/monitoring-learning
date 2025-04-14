@@ -11,6 +11,7 @@ public class MetricsService {
     public MetricsService(MeterRegistry meterRegistry) {
         this.helloCounter = Counter.builder("api.hello.requests")
                 .description("Number of times /hello endpoint was called")
+                .tags("endpoint", "/hello")
                 .register(meterRegistry);
     }
 
